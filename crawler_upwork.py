@@ -45,11 +45,11 @@ with open('DataJobUpwork.csv','a', encoding="utf16", newline='') as fd:
 
     while True:
 
-        # detect next button
-        nextButton = driver.find_elements(By.CSS_SELECTOR, "button[class='up-pagination-item up-btn up-btn-link'] > div[class='next-icon up-icon']")
-
         # wait content to be loaded
         WebDriverWait(driver, 20).until(EC.visibility_of_element_located((By.CSS_SELECTOR, "h3[class='my-0 p-sm-right job-tile-title'] > a")))
+
+        # detect next button
+        nextButton = driver.find_elements(By.CSS_SELECTOR, "button[class='up-pagination-item up-btn up-btn-link'] > div[class='next-icon up-icon']")
 
         # take web element
         jobTitle = driver.find_elements(By.CSS_SELECTOR, "h3[class='my-0 p-sm-right job-tile-title'] > a")
